@@ -1,5 +1,5 @@
 body {
-    background-color: #1D4221;
+    background-color: beige; /* Cor de fundo alterada para Bege */
     color: white;
     font-family: "Bai Jamjuree", sans-serif;
     display: flex;
@@ -10,7 +10,7 @@ body {
 }
 
 button {
-    background-color: #FFC0CB;
+    background-color: deeppink; /* Cor do botão alterada para Rosa Escuro (Deep Pink) */
     color: white;
     font-family: "Bai Jamjuree", sans-serif;
 }
@@ -30,5 +30,4 @@ main {
 
 img {
     max-width: 90%;
-
 }
