@@ -1,29 +1,31 @@
-// Arquivo: script.js
 document.addEventListener('DOMContentLoaded', () => {
-    // Seleciona todos os botões que têm a classe 'btn-proximo'
-    const botoesProximo = document.querySelectorAll('.btn-proximo');
+    // Seleciona todos os botões com a classe 'btn-proximo'
+    const avanca = document.querySelectorAll('.btn-proximo');
 
-    botoesProximo.forEach(botao => {
-        botao.addEventListener('click', () => {
-            // Pega o ID do próximo passo (ex: "1" ou "2")
-            const proximoPassoId = botao.getAttribute('data-proximo');
+    // Itera sobre cada botão para adicionar a função de clique
+    avanca.forEach(button => {
+        button.addEventListener('click', function() {
+            // 1. Encontra o passo ATUAL (aquele que tem a classe 'ativo')
+            const atual = document.querySelector('.passo.ativo');
             
-            // Encontra o passo ATUAL (aquele que está visível)
-            const passoAtual = document.querySelector('.passo.ativo');
+            // 2. Constrói o ID do próximo passo (ex: 'passo-' + '1')
+            const proximoPassoId = 'passo-' + this.getAttribute('data-proximo');
             
-            // Encontra o PRÓXIMO passo usando o ID (ex: "passo-1" ou "passo-2")
-            const proximoPasso = document.getElementById(`passo-${proximoPassoId}`);
+            // 3. Encontra o elemento do próximo passo usando o ID
+            const proximoPasso = document.getElementById(proximoPassoId);
 
-            if (passoAtual) {
-                // Esconde o passo atual
-                passoAtual.classList.remove('ativo');
+            // Ações de transição:
+            if (atual) {
+                // Remove a classe 'ativo' do passo atual (esconde)
+                atual.classList.remove('ativo');
             }
 
             if (proximoPasso) {
-                // Mostra o próximo passo
+                // Adiciona a classe 'ativo' ao próximo passo (mostra)
                 proximoPasso.classList.add('ativo');
             } else {
-                console.error(`Erro: O passo com o ID "passo-${proximoPassoId}" não foi encontrado.`);
+                // Mensagem de erro no console se o passo não for encontrado
+                console.error(`Erro: O passo com o ID "${proximoPassoId}" não foi encontrado.`);
             }
         });
     });
