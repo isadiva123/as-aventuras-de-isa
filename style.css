@@ -1,11 +1,75 @@
-/* Essencial para que apenas um passo seja visível */
+/* 1. Estilos Globais e Fundo Rosa Claro */
+body {
+    /* Define a fonte que você especificou no HTML */
+    font-family: 'Bai Jamjuree', sans-serif;
+    margin: 0;
+    padding: 0;
+    
+    /* CORREÇÃO: Fundo Rosa Claro */
+    background-color: #fce4ec; /* Rosa bem claro */
+    
+    /* Configuração para centralizar o conteúdo (a div <main>) na vertical e horizontal */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Garante que o body ocupa 100% da altura da tela */
+}
+
+/* 2. Estilo e Centralização do Conteúdo Principal */
+main {
+    max-width: 90%; /* Limita a largura máxima para telas grandes */
+    width: 450px; /* Largura ideal para um passo de história */
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    
+    /* Garante que o texto e elementos internos fiquem centralizados */
+    text-align: center;
+}
+
+/* 3. Gerenciamento de Passos (Funcionalidade principal do jogo) */
 .passo {
-    display: none;
+    display: none; /* Esconde todos os passos por padrão (funcionalidade do JS) */
 }
 
-/* Mostra apenas o passo que possui a classe 'ativo' */
 .passo.ativo {
-    display: block; /* Ou 'flex', se preferir */
+    display: block; /* Mostra apenas o passo ativo */
 }
 
-/* ... (Outros estilos de fonte, cores e botões) ... */
+/* 4. Estilos dos Elementos Internos */
+.passo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.passo p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.btn-proximo {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 600;
+    
+    /* Cores do botão */
+    background-color: #ff8a80; /* Tom de rosa mais forte para o botão */
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.btn-proximo:hover {
+    background-color: #ff6e77;
+}
