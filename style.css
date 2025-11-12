@@ -1,75 +1,76 @@
-/* 1. Estilos Globais e Fundo Rosa Claro */
+/* 1. Estilos Globais e Fundo (Baseado na sua estrutura) */
 body {
-    /* Define a fonte que você especificou no HTML */
-    font-family: 'Bai Jamjuree', sans-serif;
-    margin: 0;
-    padding: 0;
+    /* Fundo Verde Escuro */
+    background-color: #1D4221;
+    color: white; /* Cor do texto principal */
+    font-family: "Bai Jamjuree", sans-serif;
     
-    /* CORREÇÃO: Fundo Rosa Claro */
-    background-color: #fce4ec; /* Rosa bem claro */
-    
-    /* Configuração para centralizar o conteúdo (a div <main>) na vertical e horizontal */
+    /* Centralização na tela */
     display: flex;
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
-    min-height: 100vh; /* Garante que o body ocupa 100% da altura da tela */
+    
+    /* CORREÇÃO: Usar 100vh para ocupar toda a tela, em vez de um pixel fixo */
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px; /* Adiciona um pequeno padding para evitar que o conteúdo toque as bordas */
 }
 
 /* 2. Estilo e Centralização do Conteúdo Principal */
 main {
-    max-width: 90%; /* Limita a largura máxima para telas grandes */
-    width: 450px; /* Largura ideal para um passo de história */
-    padding: 30px;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    
-    /* Garante que o texto e elementos internos fiquem centralizados */
     text-align: center;
+    max-width: 90%;
+    width: 500px; /* Define uma largura máxima razoável */
+    background-color: rgba(255, 255, 255, 0.05); /* Um leve fundo translúcido para destacar */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 /* 3. Gerenciamento de Passos (Funcionalidade principal do jogo) */
 .passo {
-    display: none; /* Esconde todos os passos por padrão (funcionalidade do JS) */
+    display: none; /* Esconde todos os passos por padrão */
 }
 
 .passo.ativo {
     display: block; /* Mostra apenas o passo ativo */
 }
 
-/* 4. Estilos dos Elementos Internos */
-.passo img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.passo p {
-    font-size: 1.1em;
-    line-height: 1.5;
-    color: #333;
-    margin-bottom: 25px;
-}
-
-.btn-proximo {
+/* 4. Estilos dos Botões (Baseado na sua estrutura) */
+.btn-proximo { /* Adicionamos a classe .btn-proximo para ser mais específico */
+    /* Cores e fontes que você especificou */
+    background-color: #64A712; 
+    color: white; 
+    font-family: "Bai Jamjuree", sans-serif;
+    
+    /* Estilos de usabilidade */
     display: block;
-    width: 100%;
+    width: 100%; /* Ocupa a largura total do passo */
     padding: 12px;
-    margin-top: 15px;
-    cursor: pointer;
+    margin: 15px 0; /* Espaçamento entre os botões */
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
+    cursor: pointer;
     font-size: 1em;
     font-weight: 600;
-    
-    /* Cores do botão */
-    background-color: #ff8a80; /* Tom de rosa mais forte para o botão */
-    color: white;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease;
 }
 
 .btn-proximo:hover {
-    background-color: #ff6e77;
+    background-color: #4a800d; /* Escurece um pouco ao passar o mouse */
+}
+
+/* 5. Estilos de Imagem */
+img {
+    max-width: 100%; /* Ajustado para 100% para evitar overflow no main */
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* 6. Estilos de Parágrafo */
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
